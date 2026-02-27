@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.Python
+
+# Environments
+.venv/
+venv/
+ENV/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Data (do not commit datasets)
+Dataset/
+data/train/
+data/val/
+data/test/
+data/raw_data/
+
+# Outputs / artifacts
+outputs/
+runs/
+*.pth
+
