@@ -25,6 +25,10 @@ pip install -r requirements.txt
 
 **Recommended: original dataset + folder layout (no train/test leakage)**
 
+**Dataset citation:**
+
+- Emran, Ahta Shamul Hoque; Akter, Hafija. *Brain Tumor MRI Dataset (Tumor / No Tumor).* Mendeley Data, v1. DOI: `10.17632/c9rt8d6zrf.1` (https://doi.org/10.17632/c9rt8d6zrf.1)
+
 Place the original dataset under `Dataset/` with this layout:
 
 ```text
