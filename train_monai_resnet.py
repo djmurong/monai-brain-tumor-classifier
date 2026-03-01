@@ -245,12 +245,19 @@ def main():
         "--output-dir",
         type=str,
         default="outputs",
-        help="Directory to save model checkpoints and figures.",
+        help="Directory to save model checkpoints (e.g. best_resnet18.pth).",
+    )
+    parser.add_argument(
+        "--figures-dir",
+        type=str,
+        default=os.path.join("docs", "figures"),
+        help="Directory to save PNG figures (e.g. docs/figures).",
     )
     parser.add_argument("--seed", type=int, default=42)
     args = parser.parse_args()
 
     os.makedirs(args.output_dir, exist_ok=True)
+    os.makedirs(args.figures_dir, exist_ok=True)
 
     set_seed(args.seed)
 
@@ -367,7 +374,7 @@ def main():
     print(confusion_matrix(test_labels_np, test_preds_np))
 
     # Step 10: optional visualization of predictions
-    sample_pred_path = os.path.join(args.output_dir, "sample_prediction.png")
+    sample_pred_path = os.path.join(args.figures_dir, "sample_prediction.png")
     plot_sample_prediction(
         loader=test_loader,
         model=model,

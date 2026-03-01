@@ -27,7 +27,7 @@ pip install -r requirements.txt
 
 **Dataset citation:**
 
-- Emran, Ahta Shamul Hoque; Akter, Hafija. *Brain Tumor MRI Dataset (Tumor / No Tumor).* Mendeley Data, v1. DOI: `10.17632/c9rt8d6zrf.1` (https://doi.org/10.17632/c9rt8d6zrf.1)
+- Emran, Ahta Shamul Hoque; Akter, Hafija. _Brain Tumor MRI Dataset (Tumor / No Tumor)._ Mendeley Data, v1. DOI: `10.17632/c9rt8d6zrf.1` (https://doi.org/10.17632/c9rt8d6zrf.1)
 
 Place the original dataset under `Dataset/` with this layout:
 
@@ -113,6 +113,38 @@ After training, you will see:
 
 Open and run `model_evaluation_visualizations.ipynb` to generate evaluation plots (confusion matrix, ROC curve, PR curve, sample predictions). The notebook will use `data/test` if present, otherwise it falls back to the legacy single-directory split logic.
 
+**Evaluation metrics (test set):**
+
+| Metric                                 | Value              |
+| -------------------------------------- | ------------------ |
+| Accuracy                               | 97.96%             |
+| ROC-AUC                                | 0.989              |
+| Average precision                      | 0.991              |
+| **No Tumor** — Precision / Recall / F1 | 0.98 / 0.98 / 0.98 |
+| **Tumor** — Precision / Recall / F1    | 0.98 / 0.98 / 0.98 |
+
+_Run `model_evaluation_visualizations.ipynb` to recompute and refresh these values for your run._
+
+**Visualizations produced (saved to `docs/figures/`):**
+
+- Confusion matrix heatmap: `docs/figures/confusion_matrix.png`
+- ROC curve: `docs/figures/roc_curve.png`
+- Precision–Recall curve: `docs/figures/precision_recall_curve.png`
+- Per-class metric bars: `docs/figures/classification_report_bars.png`
+- Sample prediction grid: `docs/figures/sample_predictions_grid.png`
+
+**Preview:**
+
+![Confusion matrix](docs/figures/confusion_matrix.png)
+
+![ROC curve](docs/figures/roc_curve.png)
+
+![Precision–Recall curve](docs/figures/precision_recall_curve.png)
+
+![Per-class metrics](docs/figures/classification_report_bars.png)
+
+![Sample predictions grid](docs/figures/sample_predictions_grid.png)
+
 ---
 
 ### 5. GitHub notes
@@ -129,4 +161,3 @@ Open and run `model_evaluation_visualizations.ipynb` to generate evaluation plot
 - **ROC-AUC + confusion matrix** (the current script already prints a confusion matrix; you can extend it with ROC-AUC and ROC curves).
 - **Grad-CAM explainability** to visualize which regions of the MRI drive the model’s decisions.
 - **Upgrade to 3D MONAI ResNet** if you move to volumetric MRI data.
-
