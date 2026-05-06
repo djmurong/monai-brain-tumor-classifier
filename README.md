@@ -113,17 +113,17 @@ After training, you will see:
 
 Open and run `model_evaluation_visualizations.ipynb` to generate evaluation plots (confusion matrix, ROC curve, PR curve, sample predictions). The notebook will use `data/test` if present, otherwise it falls back to the legacy single-directory split logic.
 
-**Evaluation metrics (test set):**
+**Evaluation metrics (held-out test set):**
 
 | Metric                                 | Value              |
 | -------------------------------------- | ------------------ |
 | Accuracy                               | 97.96%             |
-| ROC-AUC                                | 0.989              |
-| Average precision                      | 0.991              |
+| ROC-AUC                                | 0.9974             |
+| Average precision                      | 0.9972             |
 | **No Tumor** — Precision / Recall / F1 | 0.98 / 0.98 / 0.98 |
 | **Tumor** — Precision / Recall / F1    | 0.98 / 0.98 / 0.98 |
 
-_Run `model_evaluation_visualizations.ipynb` to recompute and refresh these values for your run._
+_Values shown above come from the current notebook evaluation for this checkpoint. Accuracy and per-class Precision/Recall/F1 are computed at a fixed decision threshold of 0.5, while ROC-AUC and Average Precision summarize ranking performance across thresholds. Run `model_evaluation_visualizations.ipynb` to recompute and refresh metrics for your run._
 
 **Visualizations produced (saved to `docs/figures/`):**
 
